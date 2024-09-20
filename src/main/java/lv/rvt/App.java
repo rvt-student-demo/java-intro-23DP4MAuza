@@ -8,20 +8,24 @@ import java.util.*;
 public class App 
 {
     public static void main( String[] args )
-    {
+    {   //definets vienu reizi un talak mes lietojam
+        //scanner mainigo
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Ievadiet vārdu: ");
-        String name = scanner.nextLine();
-
-        System.out.println("Ievadiet uzvārdu: ");
-        String lastname = scanner.nextLine();
-
-        System.out.println("Ievadiet grupu: ");
-        String group = scanner.nextLine();
+    
+        System.out.println("Give me the first number: ");
+        int pirmais = Integer.valueOf(scanner.nextLine());
 
 
+        System.out.println("Give me the second number: ");
+        int otrais = Integer.valueOf(scanner.nextLine());
 
-        System.out.println("Students: "+ name + " " + lastname + ", Grupa: " + group);
+    
+
+        System.out.println(pirmais + " " + "+" + " " + otrais + " "+ "=" + " " + pirmais + otrais);
+        System.out.println(pirmais + " " + "-" + " " + otrais + " " + "=" + " " + (pirmais - otrais));
+        System.out.println(pirmais + " " + "*" + " " + otrais + " " + "=" + " " + pirmais * otrais);
+        double result = pirmais / (double) otrais ;
+ 
+        System.out.println(pirmais + " " + "/" + " " +otrais + " " + "=" + " " + result);
     }
 }
