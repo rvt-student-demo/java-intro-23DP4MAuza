@@ -10,22 +10,36 @@ public class App
     public static void main( String[] args )
     {   //definets vienu reizi un talak mes lietojam
         //scanner mainigo
-        Scanner scanner = new Scanner(System.in);
+        // Scanner scanner = new Scanner(System.in);
     
-        System.out.println("Give me the first number: ");
+        // System.out.println("Give me the first number: ");
+        // int pirmais = Integer.valueOf(scanner.nextLine());
+
+
+        // System.out.println("Give me the second number: ");
+        // int otrais = Integer.valueOf(scanner.nextLine());
+
+    
+
+        // System.out.println(pirmais + " " + "+" + " " + otrais + " "+ "=" + " " + pirmais + otrais);
+        // System.out.println(pirmais + " " + "-" + " " + otrais + " " + "=" + " " + (pirmais - otrais));
+        // System.out.println(pirmais + " " + "*" + " " + otrais + " " + "=" + " " + pirmais * otrais);
+        // double result = pirmais / (double) otrais ;
+ 
+        // System.out.println(pirmais + " " + "/" + " " +otrais + " " + "=" + " " + result);
+
+
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Give speed: ");
         int pirmais = Integer.valueOf(scanner.nextLine());
 
+    if (pirmais > 90) {
+        System.out.println("Speeding Ticket!");
+    }
+    if (pirmais < 90) {
+        System.out.println("No speeding ticket!");
+    }
 
-        System.out.println("Give me the second number: ");
-        int otrais = Integer.valueOf(scanner.nextLine());
-
-    
-
-        System.out.println(pirmais + " " + "+" + " " + otrais + " "+ "=" + " " + pirmais + otrais);
-        System.out.println(pirmais + " " + "-" + " " + otrais + " " + "=" + " " + (pirmais - otrais));
-        System.out.println(pirmais + " " + "*" + " " + otrais + " " + "=" + " " + pirmais * otrais);
-        double result = pirmais / (double) otrais ;
- 
-        System.out.println(pirmais + " " + "/" + " " +otrais + " " + "=" + " " + result);
     }
 }
