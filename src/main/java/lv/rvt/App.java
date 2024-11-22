@@ -1,37 +1,53 @@
 package lv.rvt;
 
 public class App {
-    private int seconds;
-    private int hundredths;
+    private int value;
+
+    public App(int startValue) {
+        this.value = startValue;
+    }
 
     public App() {
-        this.seconds = 0;
-        this.hundredths = 0;
+        this.value = 0;
     }
 
-    public String toString() {
-        return String.format("%02d:%02d", seconds, hundredths);
+    public int value() {
+        return this.value;
     }
 
-    public void advance() {
-        hundredths++;
-        
-        if (hundredths == 100) {
-            hundredths = 0;
-            seconds++;
-        }
+    public void increase() {
+        this.value++;
+    }
 
-        if (seconds == 60) {
-            seconds = 0;
-        }
+    public void decrease() {
+        this.value--;
     }
 
     public static void main(String[] args) {
-        App timer = new App();
+        App counter1 = new App(10);
+
+        System.out.println(counter1.value());
         
-        for (int i = 0; i < 150; i++) {
-            System.out.println(timer);
-            timer.advance();
-        }
+        counter1.increase();
+        System.out.println(counter1.value());
+
+        counter1.decrease();
+        System.out.println(counter1.value());
+
+       
+       
+        System.out.println();
+
+
+
+        App counter2 = new App(5);
+
+        System.out.println(counter2.value());
+
+        counter2.increase();
+        System.out.println(counter2.value());
+        
+        counter2.decrease();
+        System.out.println(counter2.value()); 
     }
 }
