@@ -1,53 +1,17 @@
 package lv.rvt;
 
 public class App {
-    private int value;
 
-    public App(int startValue) {
-        this.value = startValue;
-    }
-
-    public App() {
-        this.value = 0;
-    }
-
-    public int value() {
-        return this.value;
-    }
-
-    public void increase() {
-        this.value++;
-    }
-
-    public void decrease() {
-        this.value--;
+    public int weigh(Person person) {
+        return person.getWeight();
     }
 
     public static void main(String[] args) {
-        App counter1 = new App(10);
-
-        System.out.println(counter1.value());
+        App childrensHospital = new App();
+        Person ethan = new Person("Ethan", 1, 110, 7);
+        Person peter = new Person("Peter", 33, 176, 85);
         
-        counter1.increase();
-        System.out.println(counter1.value());
-
-        counter1.decrease();
-        System.out.println(counter1.value());
-
-       
-       
-        System.out.println();
-
-
-
-        App counter2 = new App(5);
-
-        System.out.println(counter2.value());
-
-        counter2.increase();
-        System.out.println(counter2.value());
-        
-        counter2.decrease();
-        System.out.println(counter2.value()); 
+        System.out.println(ethan.getName() + " weight: " + childrensHospital.weigh(ethan) + " kilos");
+        System.out.println(peter.getName() + " weight: " + childrensHospital.weigh(peter) + " kilos");
     }
 }
