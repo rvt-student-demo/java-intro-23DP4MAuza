@@ -7,12 +7,11 @@ public class Person {
     private int weight; 
     private int feed;
 
-    public Person(String name, int age, int height, int weight, int feed) {
+    public Person(String name, int age, int height, int weight) {
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
-        this.feed = feed;
     }
 
     public String getName() {
@@ -23,7 +22,7 @@ public class Person {
         return weight;
     }
     
-    public int feed(){
-        return feed;
+    public void feed(){
+        this.weight += 1;
     }
 }
