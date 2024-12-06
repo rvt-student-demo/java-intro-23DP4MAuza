@@ -1,47 +1,20 @@
 package lv.rvt;
 
+import java.io.BufferedReader;
+import java.util.Scanner;
+
 public class App {
-    private int totalWeighings;
-
-    public App() {
-        this.totalWeighings = 0;
-    }
-
-    public int weigh(Person person) {
-        totalWeighings++;
-        return person.getWeight();
-    }
-
-    public int weighings(Person person) {
-        return person.getWeighCount();
-    }
-
-    public int getWeight(Person person) {
-        return person.getWeight();
-    }
-
-    public int weighings() {
-        return totalWeighings;
-    }
     
-        public static void main(String[] args) {
-            HealthStation childrensHospital = new HealthStation();
-        
-            Person ethan = new Person("Ethan", 1, 110, 0);
-            Person peter = new Person("Peter", 33, 176, 0);
-        
-            System.out.println("weighings performed: " + childrensHospital.weighings());
-        
-            childrensHospital.weigh(ethan);
-            childrensHospital.weigh(peter);
-        
-            System.out.println("weighings performed: " + childrensHospital.weighings());
-        
-            childrensHospital.weigh(ethan);
-            childrensHospital.weigh(ethan);
-            childrensHospital.weigh(ethan);
-            childrensHospital.weigh(ethan);
-        
-            System.out.println("weighings performed: " + childrensHospital.weighings());
+        public static void main(String[] args) throws Exception {
+            Scanner scanner = new Scanner(System.in);
+
+            BufferedReader reader = Helper.getReader("persons.csv");
+
+            System.out.println(reader.readLine());
+            System.out.println(reader.readLine());
+            System.out.println(reader.readLine());
+
+            reader.close();
+            scanner.close();
         }
     }
