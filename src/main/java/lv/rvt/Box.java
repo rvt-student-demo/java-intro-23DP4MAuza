@@ -1,37 +1,33 @@
 package lv.rvt;
 
 public class Box {
-    private final double width;
-    private final double height;
-    private final double length;
+    private double length;
+    private double width;
+    private double height;
 
-    public Box(double width, double height, double length) {
+    public Box(double length, double width, double height) {
+        this.length = length;
         this.width = width;
         this.height = height;
-        this.length = length;
-    }
-
-    public Box(double side) {
-        this(side, side, side); 
-    }
-
-    public double volume() {
-        return width * height * length;
     }
 
     public double area() {
-        return 2 * (width * height + height * length + length * width);
+        return 2 * faceArea() + 2 * topArea() + 2 * sideArea();
     }
 
-    public double getWidth() {
-        return width;
+    private double faceArea() {
+        return length * height;
     }
 
-    public double getHeight() {
-        return height;
+    private double topArea() {
+        return length * width;
     }
 
-    public double getLength() {
-        return length;
+    private double sideArea() {
+        return width * height;
+    }
+
+    public double volume() {
+        return length * width * height;
     }
 }
