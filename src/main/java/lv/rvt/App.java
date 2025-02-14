@@ -1,20 +1,54 @@
 package lv.rvt;
-
-import java.io.BufferedReader;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
+
     public static void main(String[] args) {
-        Box box = new Box(2.5, 5.0, 6.0);
-        System.out.println("Original Box Area: " + box.area() + " volume: " + box.volume());
-        System.out.println("Original Box Length: " + box.length() + " height: " + box.height() + " width: " + box.width());
+  
+        System.out.println("===TEST 1===");
+        Book book1 = new Book("Fyodor Dostoevsky", "Crime and Punishment", 2);
+        Book book2 = new Book("Robert Martin", "Clean Code", 1);
+        Book book3 = new Book("Kent Beck", "Test Driven Development", 0.5);
 
-        Box biggerBox = box.biggerBox(box);
-        System.out.println("Bigger Box Area: " + biggerBox.area() + " volume: " + biggerBox.volume());
-        System.out.println("Bigger Box Length: " + biggerBox.length() + " height: " + biggerBox.height() + " width: " + biggerBox.width());
+        CD cd1 = new CD("Pink Floyd", "Dark Side of the Moon", 1973);
+        CD cd2 = new CD("Wigwam", "Nuclear Nightclub", 1975);
+        CD cd3 = new CD("Rendezvous Park", "Closer to Being Here", 2012);
 
-        Box smallerBox = box.smallerBox(box);
-        System.out.println("Smaller Box Area: " + smallerBox.area() + " volume: " + smallerBox.volume());
-        System.out.println("Smaller Box Length: " + smallerBox.length() + " height: " + smallerBox.height() + " width: " + smallerBox.width());
+        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book3);
+        System.out.println(cd1);
+        System.out.println(cd2);
+        System.out.println(cd3);
+
+       
+        System.out.println("===TEST 2===");
+        Box box = new Box(10);
+
+        box.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
+        box.add(new Book("Robert Martin", "Clean Code", 1));
+        box.add(new Book("Kent Beck", "Test Driven Development", 0.7));
+
+        box.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
+        box.add(new CD("Wigwam", "Nuclear Nightclub", 1975));
+        box.add(new CD("Rendezvous Park", "Closer to Being Here", 2012));
+
+        System.out.println(box);
+        
+        
+        Box box1 = new Box(10);
+        Box box2 = new Box(20);
+        
+        box1.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
+        box1.add(new Book("Robert Martin", "Clean Code", 1));
+        box1.add(new Book("Kent Beck", "Test Driven Development", 0.7));
+
+        box1.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
+        box1.add(new CD("Wigwam", "Nuclear Nightclub", 1975));
+        box1.add(new CD("Rendezvous Park", "Closer to Being Here", 2012));
+        
+        box2.add(box1);
+        System.out.println(box2);
     }
+
 }

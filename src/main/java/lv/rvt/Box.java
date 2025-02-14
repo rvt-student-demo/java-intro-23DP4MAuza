@@ -1,47 +1,36 @@
 package lv.rvt;
 
-public class Box {
-    private double length;
-    private double height;
-    private double width;
+import java.util.ArrayList;
 
-    public Box(double length, double height, double width) {
-        this.length = length;
-        this.height = height;
-        this.width = width;
+public class Box implements Packable {
+    private double maxWeight;
+    private ArrayList<Packable> contents;
+    
+    public Box(double maxWeight) {
+        this.maxWeight = maxWeight;
+        this.contents = new ArrayList<>();
     }
-
-    public Box(Box oldBox) {
-        this.length = oldBox.length();
-        this.height = oldBox.height();
-        this.width = oldBox.width();
+    
+    public void add(Packable item) {
+        if (this.maxWeight > item.weight() + this.weight()) {
+            this.contents.add(item);
+        }
     }
-
-    public double length() {
-        return this.length;
+    
+    @Override
+    public double weight() {
+        if (contents.size() == 0) {
+            return 0.0;
+        }
+        double totalWeight = 0;
+        for (Packable item : contents) {
+            totalWeight += item.weight();
+        }
+        return totalWeight;
     }
-
-    public double height() {
-        return this.height;
-    }
-
-    public double width() {
-        return this.width;
-    }
-
-    public double area() {
-        return 2 * (length * height + height * width + length * width);
-    }
-
-    public double volume() {
-        return length * height * width;
-    }
-
-    public Box biggerBox(Box oldBox) {
-        return new Box(1.25 * oldBox.length(), 1.25 * oldBox.height(), 1.25 * oldBox.width());
-    }
-
-    public Box smallerBox(Box oldBox) {
-        return new Box(0.75 * oldBox.length(), 0.75 * oldBox.height(), 0.75 * oldBox.width());
+    
+    @Override
+    public String toString() {
+        return "Box: " + contents.size() + " items, total weight " + this.weight() + " kg";
     }
 }
