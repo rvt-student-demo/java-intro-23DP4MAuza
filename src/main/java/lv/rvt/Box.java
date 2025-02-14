@@ -31,6 +31,6 @@ public class Box implements Packable {
     
     @Override
     public String toString() {
-        return "Box: " + contents.size() + " items, total weight " + this.weight() + " kg";
+        return "Box: " + contents.size() + " items, total weight " + this.weight() + " (Kg)";
     }
 }
